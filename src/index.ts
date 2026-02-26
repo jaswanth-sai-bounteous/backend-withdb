@@ -13,7 +13,6 @@ app.get("/", (_req: Request, res: Response) => {
 
 app.use("/todos", todoRouter);
 
-
 connectDB().then(() => {
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
