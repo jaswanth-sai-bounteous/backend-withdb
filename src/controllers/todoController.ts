@@ -62,7 +62,7 @@ export const updateSingleTodo = async (req: Request, res: Response) => {
   const bodyParsed = updateTodoSchema.safeParse(req.body);
   if (!bodyParsed.success) return res.status(400).json(bodyParsed.error.flatten());
 
-  // Convert dueDate string to Date if present
+  
   const updates: Partial<Pick<ITodo, "name" | "dueDate" | "completed">> = {
     ...bodyParsed.data,
     dueDate: bodyParsed.data.dueDate ? new Date(bodyParsed.data.dueDate) : undefined,

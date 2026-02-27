@@ -11,7 +11,7 @@ export const updateTodoSchema = z.object({
   completed: z.boolean().optional(),
 });
 
-// FIX: use string for MongoDB _id
+
 export const idParamSchema = z.object({
   id: z.string().min(1, "ID is required"),
 });
